@@ -1,0 +1,28 @@
+.rating {
+  float: left;
+  @include clearfix;
+
+  &__item {
+    cursor: pointer;
+    float: right;
+    margin-right: 2px;
+  }
+
+  &__star {
+    width: 18px;
+    height: 18px;
+    fill: url("#gray");
+    transition: color 0.2s ease-in-out;
+  }
+}
+
+input[name="star"] {
+  display: none;
+}
+
+input[name="star"]:checked ~ label .rating__star,
+input[name="star"]:focus ~ label .rating__star,
+label:hover ~ label .rating__star,
+svg.rating__star:hover {
+  fill: url("#yellow");
+}
